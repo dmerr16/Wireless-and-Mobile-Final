@@ -5,12 +5,19 @@
     </button>
 
 </div>
+<script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.10.2.js" type="text/javascript"></script>
 <script>
     function getRandomClick() {
-        console.log("made it to randomclick");
-        var int = @Html.Action("GetInt", "Home");
-        alert(int);
+        console.log('made it here');
+        $.ajax({
+            url: '@Url.Action("GetInt", "Home")',
+            success: function (data) { alert(data); console.log(data);},
+            error: function () {alert("error getting number") }
+         });
+        @*var int = @Html.Action("GetInt", "Home");
+        alert(int);*@
     }
+
 </script>
 
 

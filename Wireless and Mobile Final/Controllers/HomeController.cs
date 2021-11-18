@@ -17,6 +17,7 @@ namespace Wireless_and_Mobile_Final.Controllers
 
 
         public int GetInt() {
+            Console.WriteLine("Recieved request");
             return random.Next();
         }
     }
